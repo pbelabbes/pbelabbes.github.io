@@ -1,0 +1,63 @@
+@import 'variables.scss';
+
+.documentationNavigationHeader{
+  h2 {
+    align-items: flex-end;
+    display: flex;
+    margin-top: 5px;
+    img {
+      width: 40px;
+      margin-right: 10px;
+      margin-left: 5px;
+    }
+  }
+}
+
+.documentationNavigation {
+  @media (min-width: $screen-md-max) {
+      height: calc(100vh - 200px);
+  }
+  overflow-y: auto;
+}
+
+.tree-node {
+  margin-left: 15px;
+}
+
+.documentationNavigation {
+  ul{
+    list-style-type: none;
+    
+  }
+
+  > ul {
+    padding: 0;
+
+    // > li > ul {
+    //   padding : 0;
+    // }
+  }
+    .glyphicon {
+    font-size: 0.8em;
+  }
+  a {
+    color: $primary-color;
+    &:hover {
+      color: $active-color;
+    }
+  }
+  
+  .active {
+    a, .fa.fa-circle-o {
+      color: $active-color;
+    }
+    font-weight: 700;
+  }
+  .fa.fa-circle-o {
+    font-size: 0.8em;
+  }
+}
+
+.searchBox {
+    margin-bottom: 1em;
+}

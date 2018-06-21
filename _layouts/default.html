@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: en }}">
+<!-- head -->
+{%- include html-head.html -%} 
+<body>
+    <!-- header -->
+    {%- include header.html -%}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3">{%-  include navigation.html -%}</div>
+            <div class="col-md-9 content--noPaddingRight" >
+                <div class="documentationContent">
+                    <div class="documentationPage">
+                        {%- assign path = page.url |  split: '/'  -%}
+                         {%- assign pathsize = path | size | minus: 1 -%}
+                         {% case page.collection %}
+                             {% when "bonita" %}
+                                 {% assign repo = "bonita-doc" %}
+                             {% when "bcd" %}
+                                 {% assign repo = "bonita-continuous-delivery-doc" %}
+                             {% else %}
+                                 {% assign repo = "bonita-ici-doc" %}
+                         {% endcase %}
+                            <a href="https://github.com/bonitasoft/{{repo}}/edit/{{path[2]}}/md/{{ path [pathsize] }}.md" target="_blank"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub"></a>
+                        {{ page.content }}
+                    </div>
+                </div>
+            
+            </div>
+        </div>
+    </div>
+    <!-- scripts -->
+    {%- include scripts.html -%} 
+    </body>
+</html>

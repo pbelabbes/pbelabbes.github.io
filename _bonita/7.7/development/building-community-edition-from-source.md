@@ -1,0 +1,42 @@
+---
+layout : doc
+title : "Build Bonita Community edition from source files"
+version : "7.7"
+categories:
+  - Development
+order : 206
+---
+# Build Bonita Community edition from the source
+
+This page explains how to build Bonita Community edition from the source.
+
+All source code of Bonita solution is available from the [Bonitasoft GitHub organization](https://github.com/bonitasoft). Each component of the solution has a dedicated repository (e.g. [Engine repository](https://github.com/bonitasoft/bonita-engine)).
+
+# Prerequisites
+
+To build the product, you need the following:
+
+* Internet connection
+* Git
+* JDK 1.8 or above
+* Apache Maven 3.3.9 (version is mandatory)
+* NodeJS
+
+{% alert info %}
+We provide build script for Linux only. Therefore it is recommended to use Linux. If you don't have Linux you can either use a virtual machine or port the build script to Mac.
+{% endalert %}
+
+<!---
+BS-8375
+--->
+{% alert warning %}
+Note that you can run Bonita on Windows but you cannot build Bonita on Windows (known limitation).
+{% endalert %}
+
+# Building Bonita
+
+In order to build Bonita you need to use the script provided in [Build Bonita](https://github.com/Bonitasoft-Community/Build-Bonita) GitHub project. Use the branch of the project that match the version you want to build.
+
+Simply run `bash build-script-7.4.1.sh` and provide required information.
+
+A script is used because some components rely on components that are built earlier in the sequence, so the build order must be respected.

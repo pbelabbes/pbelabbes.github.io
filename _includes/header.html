@@ -1,0 +1,69 @@
+<div class="documentationHeader">
+    <nav class="navbar navbar-default">
+      <div id="top-links" class="container-fluid">
+          <div class="row">
+             <ul class="inline pull-right">
+                 <li><a href="http://www.bonitasoft.com/about-us/news" style="color: white">News</a></li>
+                 <li><a href="http://community.bonitasoft.com/" style="color: white">Community</a></li>
+                 <li><a href="http://customer.bonitasoft.com/" style="color: white">Customer portal</a></li>
+                 <li><a href="http://partner.bonitasoft.com/home" style="color: white">Partners</a></li>
+             </ul>
+          </div>
+      </div>
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="logo">
+            <img alt="Bonitasoft" src="{{ '/assets/img/logo_white.png' | relative_url }}">
+          </a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li class="dropdown" >
+            <a class="version" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Bonita <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+                {% assign bonita = site.collections | where: "label","bonita" | first %}
+                {% for version in bonita.versions %}
+                <li role="menuitem">
+                        <a class="version" href="{{-  'bonita' | absolute_url  -}}/{{version}}">{{version}} </a>
+                </li>
+      
+                {% endfor %}
+                
+                <!-- <li class="menu-item dropdown dropdown-submenu">
+                    <a class="dropdown-toggle">Other versions</a>
+                    <ul class="dropdown-menu">
+                        <li >
+                            <a href="" class="version"></a>
+                        </li>
+                    </ul>
+                </li> -->
+  
+            </ul>
+          </li>
+          <li class="dropdown">
+          <a class="version" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Add-ons <span class="caret"></span></a>
+          <ul class="dropdown-menu" >
+
+              {% for coll in site.collections %}
+              {% unless coll.label == "bonita"  %}
+                {% unless coll.label == "posts" %}
+                    <li class="menu-item dropdown dropdown-submenu" >
+                        <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{coll.label}}</a>
+                        <ul class="dropdown-menu">
+                            {% for version in coll.versions %}
+                                <li class="addOnVersion" >
+                                    <a class="version" href="{{-  coll.label | absolute_url  -}}/{{version}}">{{version}}</a>
+                                </li>
+                            {% endfor %}
+                            
+                        </ul>
+                    </li>
+                {% endunless %}
+                {% endunless %}
+               {% endfor %}
+              
+          </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
