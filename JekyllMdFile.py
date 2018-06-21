@@ -84,8 +84,8 @@ order : %d
         if  "](" in line and ".md" in line:
             line = self.addRelativePath(line)
 
-        if ":::" in line :
-            line = self.insertAlert(line)
+        # if ":::" in line :
+        #     line = self.insertAlert(line)
 
         if "${varVersion}" in line :
             line = line.replace("${varVersion}", "{{page.version}}")
