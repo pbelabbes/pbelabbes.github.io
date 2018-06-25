@@ -9,7 +9,7 @@ repos = {
 }
 
 java_parseur = "/home/bonitasoft/IdeaProjects/taxo_to_arch/out/production/taxo_to_arch"
-destPath = "/home/bonitasoft/dev/pbelabbes.github.io/"
+destPath = "/home/bonitasoft/dev/proto_doc/"
 
 if len(sys.argv) < 3 : 
     print "Not enough argument, we expected : python generate_doc.py <product> <version>"

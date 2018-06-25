@@ -22,9 +22,9 @@ This toolkit is compatible with Amazon EC2 cloud platform (AWS), on premises ser
 
 These scripts are powered by [Ansible](http://www.ansible.com). Short note from Wikipedia:
 
-::: info
+{% alert info %}
 Ansible is a free software platform for configuring and managing computers. It combines multi-node software deployment, ad hoc task execution, and configuration management. It manages nodes over SSH or PowerShell and requires Python (2.4 or later) to be installed on them. Modules work over JSON and standard output and can be written in any programming language. The system uses YAML to express reusable descriptions of systems.
-:::
+{% endalert %}
 
 The Bonita Continuous Delivery (BCD) tooling is provided through a Docker container called _BCD Controller_. In this controller you’ll find all useful tooling to manage your provisioning of Bonita platform and more. This controller should be installed on your local machine.
 

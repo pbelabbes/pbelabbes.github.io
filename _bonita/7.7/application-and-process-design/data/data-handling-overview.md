@@ -1,0 +1,47 @@
+---
+layout : doc
+title : "Data handling overview"
+version : "7.7"
+categories:
+  - Application and Process Design
+  - Data
+order : 32
+---
+# Data handling overview
+
+In a BPM-based application, use:
+
+* [Business variables]({{"bonita/7.7/application-and-process-design/data/define-and-deploy-the-bdm" | relative_url}}) for information that:
+  * is mostly used by Bonita
+  * has meaning after a process instance is archived
+  * is used at several places in the process
+  * is read by a process to orientate its flow
+  * is shared across several process instances
+  * is displayed in an application page
+
+* Task-level [process variables]({{"bonita/7.7/application-and-process-design/define-access-control-on-business-objects/specify-data-in-a-process-definition" | relative_url}}) for:
+  * intermediate computation results (for example a connector result to be used as input of the next connector)
+  * information that is private to the process, not used elsewhere in the application
+
+* Pool-level [process variables]({{"bonita/7.7/application-and-process-design/define-access-control-on-business-objects/specify-data-in-a-process-definition" | relative_url}}) for information that:
+  * can be read by the process to orientate its flow
+  * can be used at several places in the process
+  * is private to the process, not used elsewhere in the application
+
+* External databases, with [connectors]({{"bonita/7.7/application-and-process-design/connectivity/connectivity-overview" | relative_url}}) and [custom data types]({{"bonita/7.7/application-and-process-design/define-access-control-on-business-objects/create-a-complex-data-type" | relative_url}}), for information that:
+  * is used by multiple applications besides Bonita
+
+Key benefits of using business data:
+
+* Control of indexing strategy
+* Definition of custom queries to efficiently read the data
+* Full control of lifecycle of the data through the set of processes that handle it (add, update and delete)
+* Improved performance compared with process variables or external databases
+* Easier application maintenance
+
+An application page accesses business data using the [bdm REST API]({{"bonita/7.7/development/rest-api/bdm-api" | relative_url}}). A page also contains page [variables]({{"bonita/7.7/application-and-process-design/page-and-form-development/ui-designer/variables" | relative_url}}), which have no meaning outside the page.
+
+The data that is passed from a form to a process is defined using a [contract]({{"bonita/7.7/application-and-process-design/define-access-control-on-business-objects/contracts-and-contexts" | relative_url}}). Define a contract for process instantiation and for each human task. 
+These contracts are part of the process definition. 
+A form has access to business data and documents using the context]({{"bonita/7.7/application-and-process-design/define-access-control-on-business-objects/contracts-and-contexts" | relative_url}}) and the . 
+A form also contains form [variables]({{"bonita/7.7/application-and-process-design/page-and-form-development/ui-designer/variables" | relative_url}}), which have no meaning outside the form.

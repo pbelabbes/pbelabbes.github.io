@@ -59,7 +59,7 @@ Hence the Bonita Docker image startup sequence can be described as follows:
 1. Execute custom initialization `*.sh` scripts found in the container's `/opt/custom-init.d` folder
 1. Start Tomcat server
 
-::: info
+{% alert info %}
 **Warning**: all custom scripts are re-executed each time the Bonita Docker container is restarted.
 
 If you want your script to be executed only once, you need to handle the conditional execution in your custom script itself.
@@ -79,7 +79,7 @@ fi
 # Create indicator file
 touch ${indicator_path}
 ```
-:::
+{% endalert %}
 
 ## In which order are custom initialization scripts invoked?
 
